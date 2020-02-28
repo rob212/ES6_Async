@@ -34,6 +34,7 @@ const getRelated = publisher => {
 
 // the async keyboard means this is an asynchronous function that keeps running in the background as before
 // async runs in the BACKGROUND so we are ok to 'stop' the function until we get a response. 
+// An ASYNC ALWAYS returns a Promise.
 async function getRecipes() {
     console.log('hello I\'m starting the getRecipes async function');
     // the code will await the promise resovling and pass the value of the resolve not a promise
@@ -47,6 +48,9 @@ async function getRecipes() {
     return recipe; //- this is just to highlight the fact this doesn't work whould use a promise instead
 }
 
+
+// const waht = getRecipes();
+// console.log(`the type of the async return is a promise: ${waht instanceof Promise}`);
 // const rec = getRecipes();   this ultimately returns a promise so should use a then as below.
 // console.log(rec);   this won't work as it will run before the getRecipe method is still 
 // running in the background therefore we would get a Pending Promise. 
